@@ -24,6 +24,6 @@ def render():
     index = 0
     for layer in world:
         for o in layer:
-            if index == 2 : o.draw(0, 20)
+            if index == 0 : o.draw(0, 20)
             else : o.draw(0, 0)
             index += 1
