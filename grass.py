@@ -8,9 +8,9 @@ class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
 
-    def draw(self):
-        self.image.draw(400, 50)
-        self.image.draw(400, 30)
+    def draw(self, x, y):
+        self.image.draw(400 + x, 30 + y)
+        
 
     def update(self):
         pass

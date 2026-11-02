@@ -13,7 +13,7 @@ from ball import Ball
 
 class Boy:
     def __init__(self):
-        self.x, self.y = 400, 30 #이전 y값 90
+        self.x, self.y = 400, 60 #이전 y값 90
         self.frame = 0
         self.image = load_image('animation_sheet.png')
         self.idle_started_at = get_time()
@@ -57,7 +57,7 @@ class Boy:
                 print(f'공 발사 방향: {direction}')
                 game_world.add_object(
                     Ball(self.x + self.face_dir * 40, self.y,
-                         self.face_dir), 1
+                         self.face_dir), 0
                 )
             return
 
@@ -93,7 +93,7 @@ class Boy:
             self.x += self.dir * 5
             self.x = max(25, min(get_canvas_width() - 25, self.x))
 
-    def draw(self):
+    def draw(self, x, y):
         if self.state == 'SLEEP':
             angle = pi / 2 if self.face_dir == 1 else -pi / 2
             flip = '' if self.face_dir == 1 else 'h'

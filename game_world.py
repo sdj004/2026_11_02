@@ -21,6 +21,9 @@ def update():
 
 #game rendering
 def render():
+    index = 0
     for layer in world:
         for o in layer:
-            o.draw()
+            if index == 2 : o.draw(0, 20)
+            else : o.draw(0, 0)
+            index += 1
